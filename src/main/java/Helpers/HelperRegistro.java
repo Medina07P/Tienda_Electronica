@@ -25,7 +25,7 @@ public class HelperRegistro {
                datos.put("Apellido", objper.getApellido());
                datos.put("Direccion", objper.getDireccion());
                datos.put("Cedula", objper.getCedula());
-               datos.put("Productos", objper.getProductos());
+               datos.put("Productos", objper.getProducto());
                datos.put("Nom_img", objper.getNom_img());
                long inicio= System.currentTimeMillis();
                PersonaProvider.GuardarPersona("Persona", String.valueOf(id),datos);
@@ -35,7 +35,7 @@ public class HelperRegistro {
            }catch (Exception e) {
                System.out.println("Errro"+ e.getMessage());
            }
-       }else {
+       }else {//
            System.out.println("El uid ya existe");
        }
         

@@ -134,7 +134,44 @@ public class HelperValidacion {
    public static int RetornarCEDireccionV2(String nombre){
        int ce=0;
        ArrayList<Character> lscaracteres=new ArrayList<>();
-       lscaracteres.add('$');
+        lscaracteres.add('.');
+        lscaracteres.add('~');
+        lscaracteres.add('/');
+        lscaracteres.add(';');
+        lscaracteres.add(':');
+        lscaracteres.add('"');
+        lscaracteres.add('!');
+        lscaracteres.add('º');
+        lscaracteres.add('¬');
+        lscaracteres.add('|');
+        lscaracteres.add('?');
+        lscaracteres.add('¿');
+        lscaracteres.add('&');
+        lscaracteres.add('%');
+        lscaracteres.add('$');
+        lscaracteres.add('_');
+        lscaracteres.add('*');
+        lscaracteres.add('<');
+        lscaracteres.add('>');
+        lscaracteres.add('€');
+        lscaracteres.add('Ç');
+        lscaracteres.add('+');
+        lscaracteres.add('(');
+        lscaracteres.add(')');
+        lscaracteres.add('»');
+        lscaracteres.add('¥');
+        lscaracteres.add('«');
+        lscaracteres.add('¶');
+        lscaracteres.add('[');
+        lscaracteres.add(']');
+        lscaracteres.add('{');
+        lscaracteres.add('}');
+        lscaracteres.add('÷');
+        lscaracteres.add('=');
+        lscaracteres.add(',');
+        lscaracteres.add('@');
+        lscaracteres.add('´');
+       
        
        for (int j = 0; j < nombre.length(); j++) {
            boolean flag=Character.isLetter(nombre.charAt(j));
