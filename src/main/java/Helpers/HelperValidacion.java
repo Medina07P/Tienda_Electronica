@@ -131,18 +131,54 @@ public class HelperValidacion {
        }
    }
    
-   public static int ValidarTodo(String cadena)
-   {
-       int conteo=ValidarVacio(cadena)+RetornarValor(cadena)+RetornarCEV2(cadena);
-       return conteo;
+   public static int RetornarCEDireccionV2(String nombre){
+       int ce=0;
+       ArrayList<Character> lscaracteres=new ArrayList<>();
+       lscaracteres.add('$');
+       
+       for (int j = 0; j < nombre.length(); j++) {
+           boolean flag=Character.isLetter(nombre.charAt(j));
+           if(!flag){
+               for (int i = 0; i < lscaracteres.size(); i++) {
+                   if(lscaracteres.get(i).compareTo(nombre.charAt(j))==0)
+                   {
+                       ce++;
+                       
+                   }
+                   
+               }
+           }
+           
+       }
+       return ce;
    }
-   
-    public static int ValidarTodoLetra(String cadena)
-   {
-       int conteo=ValidarVacio(cadena)+RetornarLetra(cadena)+RetornarCEV2(cadena);
-       return conteo;
-   }
-    public static int RetornarCE_Address(String direccion) {
+   public static int RetornarCEV2Contraseña(String contraseña)
+    {
+        int ce=0;
+        
+        ArrayList<Character> lscaracteres = new ArrayList<>();
+        
+        lscaracteres.add('.');
+        lscaracteres.add('-');
+        lscaracteres.add('/');
+     
+
+        for (int j = 0; j < contraseña.length(); j++) {
+             boolean flag = Character.isLetter(contraseña.charAt(j));
+             if(!flag) {
+                 for (int i = 0; i < lscaracteres.size(); i++) {
+                      
+                     if(lscaracteres.get(i).compareTo(contraseña.charAt(j))==0)
+                     {
+                        ce++;
+                     }
+                 }
+             }
+        }
+        return ce;
+    }
+    
+    public static int RetornarCE_Address(String direccion) {//no lo se broooo
         int ce = 0;
 
         ArrayList<Character> lscaracteres = new ArrayList<>();
@@ -197,30 +233,31 @@ public class HelperValidacion {
         return ce;
     }
     
-     public static int RetornarCEV2Contraseña(String contraseña)
+    public static int ValidarTodo(String cadena)
+   {
+       int conteo=ValidarVacio(cadena)+RetornarValor(cadena)+RetornarCEV2(cadena);
+       return conteo;
+   }
+   
+    public static int ValidarTodoLetra(String cadena)
+   {
+       int conteo=ValidarVacio(cadena)+RetornarLetra(cadena)+RetornarCEV2(cadena);
+       return conteo;
+   }
+    public static int ValidarTodoDireccion(String cadena)
     {
-        int ce=0;
-        
-        ArrayList<Character> lscaracteres = new ArrayList<>();
-        
-        lscaracteres.add('.');
-        lscaracteres.add('-');
-        lscaracteres.add('/');
-     
-
-        for (int j = 0; j < contraseña.length(); j++) {
-             boolean flag = Character.isLetter(contraseña.charAt(j));
-             if(!flag) {
-                 for (int i = 0; i < lscaracteres.size(); i++) {
-                      
-                     if(lscaracteres.get(i).compareTo(contraseña.charAt(j))==0)
-                     {
-                        ce++;
-                     }
-                 }
-             }
-        }
-        return ce;
+        int conteo=ValidarVacio(cadena)+RetornarCEDireccionV2(cadena);
+        return conteo;
+    }
+    public static int ValidarTodoSerial(String cadena)
+    {
+        int conteo=ValidarVacio(cadena)+RetornarCEV2(cadena);
+        return conteo;  
+    }
+    public static int ValidarTodoContraseña(String cadena)
+    {
+        int conteo=ValidarVacio(cadena)+RetornarCEV2Contraseña(cadena);
+        return conteo;
     }
     
 }
