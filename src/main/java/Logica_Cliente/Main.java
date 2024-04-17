@@ -4,9 +4,11 @@
  */
 package Logica_Cliente;
 
+import Helpers.HelperImpresion;
 import Helpers.HelperRegistro;
 import Helpers.HelperValidacion;
 import Logica_Conexion.Conexion;
+import Logica_Conexion.PersonaProvider;
 import Logica_Negocio.Persona;
 import Logica_Negocio.Producto;
 import java.util.ArrayList;
@@ -259,7 +261,7 @@ public class Main {
                     break;
                 case 2:
                     lspersonasnube=PersonaProvider.CargarInfoPersona();
-                    HelperImpresion.InfoPersonaNube(lspersonasnube);
+                    HelperImpresion.ImprimirInfoPersonaNube(lspersonasnube);
                     break;
                 case 3:
                 break;
@@ -269,11 +271,9 @@ public class Main {
                     System.out.println("Digite el uid a buscar");
                     codigo=scan.nextLine();
                     long inicio=System.currentTimeMillis();
-                    HelperImpresion.BUscarPersonaNube(lspersonasnube, codigo);
+                    HelperImpresion.BuscarPersonaNube(lspersonasnube, codigo);
                     long fin=System.currentTimeMillis();
-                    
-                
-       
+
             }
 
         } while (opc != 4);
