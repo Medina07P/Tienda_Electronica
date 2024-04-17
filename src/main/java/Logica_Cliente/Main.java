@@ -23,7 +23,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       Conexion.Conectar();
+        Conexion.Conectar();
 
         int opc = 0, num_pcs = 0;
 
@@ -34,7 +34,7 @@ public class Main {
         ArrayList<Persona> lspersonasnube = new ArrayList<>();
         ArrayList<Persona> lspersonalocal = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
-        String nombre, apellido, direccion, cedula, marca, serial, nom_produ,nom_img;
+        String nombre, apellido, direccion, cedula, marca, serial, nom_produ, nom_img;
         int rta, conteo;
 
         do {
@@ -140,29 +140,27 @@ public class Main {
                         conteo = HelperValidacion.ValidarTodoLetra(cedula);
                     }
                     //Termica cedula
-                   
-                     //Nombre Imagen
-                           
-                          System.out.println("Digite el nombre de la imagen de la persona" );
-                            nom_img = scan.nextLine();
-                            rta = HelperValidacion.ValidarVacio(nom_img);
 
-                            while (rta > 0) {
-                                System.out.println("Digite el nombre de la imagen de la persona" );
-                                nom_img = scan.nextLine();
-                                rta = HelperValidacion.ValidarVacio(nom_img);
-                            }
-                            conteo = HelperValidacion.ValidarTodoSerial(nom_img);
+                    //Nombre Imagen
+                    System.out.println("Digite el nombre de la imagen de la persona");
+                    nom_img = scan.nextLine();
+                    rta = HelperValidacion.ValidarVacio(nom_img);
 
-                            while (conteo != 0) {
-                                System.out.println("Digite el nombre de la imagen de la persona" );
-                                nom_img = scan.nextLine();
-                                conteo = HelperValidacion.ValidarTodoSerial(nom_img);
+                    while (rta > 0) {
+                        System.out.println("Digite el nombre de la imagen de la persona");
+                        nom_img = scan.nextLine();
+                        rta = HelperValidacion.ValidarVacio(nom_img);
+                    }
+                    conteo = HelperValidacion.ValidarTodoSerial(nom_img);
 
-                            }
-                           
-                            //Termina Nombre Imagen
+                    while (conteo != 0) {
+                        System.out.println("Digite el nombre de la imagen de la persona");
+                        nom_img = scan.nextLine();
+                        conteo = HelperValidacion.ValidarTodoSerial(nom_img);
 
+                    }
+
+                    //Termina Nombre Imagen
                     ArrayList<Producto> lsprodulocal = new ArrayList<>();
 
                     do {
@@ -177,8 +175,6 @@ public class Main {
                     } while (num_pcs <= 0);
 
                     int vc = HelperValidacion.ValidarCantidadRango(num_pcs);
-
-                   
 
                     if (vc == 1) {
                         for (int i = 0; i < num_pcs; i++) {
@@ -239,8 +235,7 @@ public class Main {
 
                             }
                             //Termina Serial
-                           
-                           
+
                             objprodu = new Producto(nom_produ, marca, serial);
                             lsprodulocal.add(objprodu);
 
@@ -256,15 +251,31 @@ public class Main {
                         producto += lsproduglobal.get(i).getNombre() + "," + lsproduglobal.get(i).getMarca() + "," + lsproduglobal.get(i).getSerial() + ";";
 
                     }
-                    int id= (int) (Math.random()*100000);
-                    objper= new Persona(String.valueOf(id), nombre, apellido, direccion, cedula, producto, nom_img);
+                    int id = (int) (Math.random() * 100000);
+                    objper = new Persona(String.valueOf(id), nombre, apellido, direccion, cedula, producto, nom_img);
                     objper.setProductos(lsproduglobal);
                     HelperRegistro.RegistrarPersonaNube(objper, id, producto);
-                    producto="";
+                    producto = "";
                     break;
-        
-    }
-    
-}while(opc!=4);
+                case 2:
+                    lspersonasnube=PersonaProvider.CargarInfoPersona();
+                    HelperImpresion.InfoPersonaNube(lspersonasnube);
+                    break;
+                case 3:
+                break;
+                case 4:
+                    String codigo="";
+                    lspersonasnube=PersonaProvider.CargarInfoPersona();
+                    System.out.println("Digite el uid a buscar");
+                    codigo=scan.nextLine();
+                    long inicio=SpringLayout.System.currentTimeMillis();
+                    HelperImpresion.BUscarPersonaNube(lspersonasnube, codigo);
+                    long fin=System.currentTimeMillis();
+                    
+                
+       
+            }
+
+        } while (opc != 4);
     }
 }
