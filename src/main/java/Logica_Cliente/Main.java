@@ -6,6 +6,7 @@ package Logica_Cliente;
 
 import Helpers.HelperImpresion;
 import Helpers.HelperRegistro;
+import Helpers.HelperTiempo;
 import Helpers.HelperValidacion;
 import Logica_Conexion.Conexion;
 import Logica_Conexion.PersonaProvider;
@@ -273,6 +274,8 @@ public class Main {
                     long inicio=System.currentTimeMillis();
                     HelperImpresion.BuscarPersonaNube(lspersonasnube, codigo);
                     long fin=System.currentTimeMillis();
+                    HelperTiempo.RetornarTiempo(fin, inicio);
+                    break;
 
             }
 

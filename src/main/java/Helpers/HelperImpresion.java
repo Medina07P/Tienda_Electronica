@@ -85,6 +85,6 @@ public class HelperImpresion {
         }
         if (bandera == 0) {
             System.out.println("El uid buscado no se encuentra en la lista");
-        }
+        }  
     }
 }
