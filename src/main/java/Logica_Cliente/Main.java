@@ -268,7 +268,7 @@ public class Main {
                     lspersonasnube=PersonaProvider.CargarInfoPersona();
                     System.out.println("Digite el uid a buscar");
                     codigo=scan.nextLine();
-                    long inicio=SpringLayout.System.currentTimeMillis();
+                    long inicio=System.currentTimeMillis();
                     HelperImpresion.BUscarPersonaNube(lspersonasnube, codigo);
                     long fin=System.currentTimeMillis();
                     
