@@ -25,9 +25,9 @@ public class HelperImpresion {
         for (int i = 0; i < lspersonasnube.size(); i++) {
             System.out.println("Persona" + "\t" + (i + 1) + "\n"
                     + "El id de la persona es: " + lspersonasnube.get(i).getUid() + "\n"
-                    + "El nombre de la persona es: " + lspersonasnube.get(i).getNombre()
-                    + "El apellido de la persona es: " + lspersonasnube.get(i).getApellido()
-                    + "La cedula de la persona es: " + lspersonasnube.get(i).getCedula()
+                    + "El nombre de la persona es: " + lspersonasnube.get(i).getNombre()+ "\n"
+                    + "El apellido de la persona es: " + lspersonasnube.get(i).getApellido()+ "\n"
+                    + "La cedula de la persona es: " + lspersonasnube.get(i).getCedula()+ "\n"
                     + "La direccion de la persona es: " + lspersonasnube.get(i).getDireccion());
             parts = lspersonasnube.get(i).getProducto().split(";");
             for (int j = 0; j < parts.length; j++) {
@@ -41,6 +41,10 @@ public class HelperImpresion {
                 System.out.println("Marca: " + "\t" + lsnube.get(k).getMarca());
                 System.out.println("Serial: " + "\t" + lsnube.get(k).getSerial());
             }
+            
+             lsnube.clear();
+                parts = null;
+                parts2 = null;
         }
 
     }
