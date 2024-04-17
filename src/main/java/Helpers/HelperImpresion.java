@@ -74,9 +74,9 @@ public class HelperImpresion {
                 }
                 for (int k = 0; k < lsnube.size(); k++) {
                     System.out.println("Producto: " + "\t" + (k + 1));
-                    System.out.println("Nombre: " + lsnube.get(i).getNombre());
-                    System.out.println("Marca: " + lsnube.get(i).getMarca());
-                    System.out.println("Serial: " + lsnube.get(i).getSerial() + "\n");
+                    System.out.println("Nombre: " + lsnube.get(k).getNombre());
+                    System.out.println("Marca: " + lsnube.get(k).getMarca());
+                    System.out.println("Serial: " + lsnube.get(k).getSerial() + "\n");
                 }
                 lsnube.clear();
                 partes = null;
