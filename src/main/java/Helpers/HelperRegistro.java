@@ -13,8 +13,9 @@ import java.util.Map;
  *
  * @author 1002805933
  */
-public class HelperRegistro {
-    public static void RegistrarPersonaNube(Persona objper, int id, String producto)
+public class HelperRegistro implements IHelperRegistro{
+     @Override
+    public  void RegistrarPersonaNube(Persona objper, int id, String producto)
     {
        boolean res= PersonaProvider.RetornarUid(objper.getUid());
        if(!res){
@@ -40,5 +41,12 @@ public class HelperRegistro {
        }
         
     }
+
+   
+    public static void RegistrarPersonaNubeI(Persona objper, int id, String producto) {
+       HelperRegistro objHelperRegistro= new HelperRegistro();
+       objHelperRegistro.RegistrarPersonaNubeI(objper, id, producto);
+    }
+    
     
 }

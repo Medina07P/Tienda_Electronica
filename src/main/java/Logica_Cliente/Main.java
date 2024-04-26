@@ -257,7 +257,7 @@ public class Main {
                     int id = (int) (Math.random() * 100000);
                     objper = new Persona(String.valueOf(id), nombre, apellido, direccion, cedula, producto, nom_img);
                     objper.setProductos(lsproduglobal);
-                    HelperRegistro.RegistrarPersonaNube(objper, id, producto);
+                    HelperRegistro.RegistrarPersonaNubeI(objper, id, producto);
                     producto = "";
                     break;
                 case 2:
