@@ -4,6 +4,14 @@
  */
 package GUI_Cliente;
 
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author 1002805933
@@ -13,10 +21,28 @@ public class MenuCliente extends javax.swing.JFrame {
     /**
      * Creates new form MenuCliente
      */
+    public String pathc;
+ public String s;
     public MenuCliente() {
         initComponents();
+        Path currentRelativePath = Paths.get("");
+         s = currentRelativePath.toAbsolutePath().toString();
+         pathc = s + "\\Images\\"+"Background"+".jpeg";
+        establecerImagen();
     }
-
+  //Método para establecer imagen
+        public void establecerImagen() {
+       
+        Image img = null;
+        try {
+            File file = new File(pathc);
+           img = ImageIO.read(new File(pathc));
+            //5. Setear la imagen al JLabel
+            jLabel4.setIcon(new ImageIcon(img));
+        } catch (IOException ioexception) {
+            System.err.println(ioexception);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,11 +54,14 @@ public class MenuCliente extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setForeground(new java.awt.Color(0, 153, 204));
         jLabel1.setText("Menu Opcion Cliente");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 6, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(0, 51, 204));
         jButton2.setForeground(new java.awt.Color(153, 255, 255));
@@ -42,27 +71,8 @@ public class MenuCliente extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(142, 142, 142)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jButton2))
-                .addContainerGap(127, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(104, 104, 104)
-                .addComponent(jButton2)
-                .addContainerGap(151, Short.MAX_VALUE))
-        );
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(142, 126, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -109,5 +119,6 @@ public class MenuCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }
