@@ -4,11 +4,14 @@
  */
 package GUI_Admin;
 
+import Logica_Conexion.PersonaProvider;
+import Logica_Negocio.Persona;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
@@ -20,6 +23,7 @@ public class VisualizarPersonaAdministrador extends javax.swing.JFrame {
 
     public String pathc;
     public String s;
+     ArrayList<Persona> lspersonasnube;
 
     public VisualizarPersonaAdministrador() {
         initComponents();
@@ -55,9 +59,9 @@ public class VisualizarPersonaAdministrador extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -69,6 +73,11 @@ public class VisualizarPersonaAdministrador extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 51, 204));
         jButton1.setForeground(new java.awt.Color(153, 255, 255));
         jButton1.setText("Mostrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 248, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(0, 0, 204));
@@ -80,13 +89,11 @@ public class VisualizarPersonaAdministrador extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 248, -1, -1));
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 333, 190));
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 390));
+
+        jScrollPane2.setViewportView(jTextPane1);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 330, 190));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -97,6 +104,12 @@ public class VisualizarPersonaAdministrador extends javax.swing.JFrame {
                 menu.setVisible(true);
                 dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        lspersonasnube = PersonaProvider.CargarInfoPersona();
+        String im=Helpers.HelperImpresion.ImprimirInfoInterfaz(lspersonasnube);
+        jTextPane1.setText(im);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,7 +151,7 @@ public class VisualizarPersonaAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 }
