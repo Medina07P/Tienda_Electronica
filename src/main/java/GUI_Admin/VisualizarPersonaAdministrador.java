@@ -27,6 +27,7 @@ public class VisualizarPersonaAdministrador extends javax.swing.JFrame {
 
     public VisualizarPersonaAdministrador() {
         initComponents();
+        this.setLocationRelativeTo(null);
         Path currentRelativePath = Paths.get("");
          s = currentRelativePath.toAbsolutePath().toString();
          pathc = s + "\\Images\\"+"Background"+".jpeg";

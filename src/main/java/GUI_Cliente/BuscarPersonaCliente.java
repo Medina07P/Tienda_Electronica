@@ -42,6 +42,7 @@ public class BuscarPersonaCliente extends javax.swing.JFrame {
 
     public BuscarPersonaCliente() {
         initComponents();
+        this.setLocationRelativeTo(null);
         Path currentRelativePath = Paths.get("");
          s = currentRelativePath.toAbsolutePath().toString();
          s1 = currentRelativePath.toAbsolutePath().toString();

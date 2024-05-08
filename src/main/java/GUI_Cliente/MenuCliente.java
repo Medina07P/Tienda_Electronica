@@ -29,6 +29,7 @@ public class MenuCliente extends javax.swing.JFrame {
      
     public MenuCliente() {
         initComponents();
+        this.setLocationRelativeTo(null);
          Path currentRelativePath = Paths.get("");
          s = currentRelativePath.toAbsolutePath().toString();
          pathc = s + "\\Images\\"+"Background"+".jpeg";

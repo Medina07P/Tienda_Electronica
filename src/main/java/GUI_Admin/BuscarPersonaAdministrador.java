@@ -43,6 +43,7 @@ public class BuscarPersonaAdministrador extends javax.swing.JFrame {
 
     public BuscarPersonaAdministrador() {
         initComponents();
+        this.setLocationRelativeTo(null);
        Path currentRelativePath = Paths.get("");
          s = currentRelativePath.toAbsolutePath().toString();
          s1 = currentRelativePath.toAbsolutePath().toString();

@@ -41,6 +41,7 @@ public class RegistrarPersonaAdministrador extends javax.swing.JFrame {
 
     public RegistrarPersonaAdministrador() {
         initComponents();
+        this.setLocationRelativeTo(null);
         this.setSize(500,500);
         
 
