@@ -249,111 +249,89 @@ public class RegistrarPersonaAdministrador extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         jTextField8 = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Registrar Persona Administrador");
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel1.setForeground(new java.awt.Color(0, 255, 255));
         jLabel1.setText("Registrar Producto");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(190, 0, 110, 16);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 110, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel2.setForeground(new java.awt.Color(0, 255, 255));
         jLabel2.setText("Nombre");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 72, 90, 16);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 72, 90, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel3.setForeground(new java.awt.Color(0, 255, 255));
         jLabel3.setText("Marca");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(0, 110, 80, 16);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 80, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel4.setForeground(new java.awt.Color(0, 255, 255));
         jLabel4.setText("Serial");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(0, 140, 70, 16);
-        getContentPane().add(jTextField1);
-        jTextField1.setBounds(190, 69, 260, 22);
-        getContentPane().add(jTextField2);
-        jTextField2.setBounds(190, 100, 260, 22);
-        getContentPane().add(jTextField3);
-        jTextField3.setBounds(192, 132, 260, 22);
-
-        jSeparator1.setBackground(new java.awt.Color(0, 204, 204));
-        jSeparator1.setForeground(new java.awt.Color(0, 204, 204));
-        getContentPane().add(jSeparator1);
-        jSeparator1.setBounds(0, 202, 490, 13);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 70, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 69, 260, -1));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, 260, -1));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 132, 260, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel5.setForeground(new java.awt.Color(0, 255, 255));
         jLabel5.setText("Cantidad Productos");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(0, 43, 150, 16);
-        getContentPane().add(jTextField4);
-        jTextField4.setBounds(190, 40, 103, 22);
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 43, 150, -1));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 40, 103, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel6.setForeground(new java.awt.Color(0, 255, 255));
         jLabel6.setText("Nombre");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(0, 242, 80, 16);
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 242, 80, -1));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel7.setForeground(new java.awt.Color(0, 255, 255));
         jLabel7.setText("Apellido");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(0, 273, 80, 16);
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 273, 80, -1));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel8.setForeground(new java.awt.Color(0, 255, 255));
         jLabel8.setText("Direccion");
-        getContentPane().add(jLabel8);
-        jLabel8.setBounds(0, 326, 80, 16);
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 204, 204));
-        jLabel9.setText("Cedula");
-        getContentPane().add(jLabel9);
-        jLabel9.setBounds(0, 298, 80, 16);
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 326, 80, -1));
 
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField5);
-        jTextField5.setBounds(259, 239, 187, 22);
-        getContentPane().add(jTextField6);
-        jTextField6.setBounds(259, 267, 187, 22);
-        getContentPane().add(jTextField7);
-        jTextField7.setBounds(259, 295, 187, 22);
-        getContentPane().add(jTextField8);
-        jTextField8.setBounds(259, 323, 187, 22);
+        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 239, 187, -1));
+        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 267, 187, -1));
+        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 295, 187, -1));
+        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 323, 187, -1));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 255, 255));
+        jLabel9.setText("Cedula");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 298, 80, -1));
 
         jButton1.setBackground(new java.awt.Color(0, 0, 204));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -365,8 +343,7 @@ public class RegistrarPersonaAdministrador extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(325, 432, 140, 23);
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 432, 140, -1));
 
         jButton2.setBackground(new java.awt.Color(0, 0, 204));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -377,8 +354,7 @@ public class RegistrarPersonaAdministrador extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2);
-        jButton2.setBounds(317, 165, 150, 23);
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 165, 150, -1));
 
         jButton3.setBackground(new java.awt.Color(0, 0, 204));
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -389,14 +365,12 @@ public class RegistrarPersonaAdministrador extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3);
-        jButton3.setBounds(378, 40, 80, 23);
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 40, 80, -1));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel10.setForeground(new java.awt.Color(0, 255, 255));
         jLabel10.setText("Registrar Persona");
-        getContentPane().add(jLabel10);
-        jLabel10.setBounds(187, 217, 130, 16);
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 217, 130, -1));
 
         jButton4.setBackground(new java.awt.Color(0, 0, 204));
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -407,25 +381,21 @@ public class RegistrarPersonaAdministrador extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4);
-        jButton4.setBounds(6, 432, 72, 23);
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 432, -1, -1));
+        getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 351, 187, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel11.setForeground(new java.awt.Color(0, 255, 255));
         jLabel11.setText("Nombre Imagen");
-        getContentPane().add(jLabel11);
-        jLabel11.setBounds(0, 357, 110, 16);
-        getContentPane().add(jTextField9);
-        jTextField9.setBounds(259, 351, 187, 22);
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 357, 110, -1));
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel12.setForeground(new java.awt.Color(0, 255, 255));
         jLabel12.setText("jLabel12");
-        getContentPane().add(jLabel12);
-        jLabel12.setBounds(58, 404, 380, 16);
-        getContentPane().add(jLabel13);
-        jLabel13.setBounds(-20, 0, 570, 500);
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(58, 404, 380, -1));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 500));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 480, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -45,7 +45,7 @@ public class HelperRegistro implements IHelperRegistro{
    
     public static void RegistrarPersonaNubeI(Persona objper, int id, String producto) {
        HelperRegistro objHelperRegistro= new HelperRegistro();
-       objHelperRegistro.RegistrarPersonaNubeI(objper, id, producto);
+       objHelperRegistro.RegistrarPersonaNube(objper, id, producto);
     }
     
     
