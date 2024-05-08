@@ -56,27 +56,28 @@ public class InicioSesionAdministrador extends javax.swing.JFrame {
         res = Helpers.HelperValidacion.ValidarTodo(usuario);
         res1 = Helpers.HelperValidacion.ValidarTodoContraseña(contraseña);
 
-        if (res == 0 && res1 == 0) {
+        if (res == 0 || res1 == 0) {
 
+            if (usuario.equals("Admin")) {
+                usuAdmin = new Administrador("Admin", "12345");
+            } else if(usuario.equals("Cliente"))
+            {
+                usuCliente = new Cliente("Cliente", "12345");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Usuario o contraseña invalida");
+                 jTextField1.setBorder(new LineBorder(Color.RED, 2));
+                jPasswordField1.setBorder(new LineBorder(Color.RED, 2));
+           
+            }
+            
             String cifrarusu = HelperCifrado.CifrarSHA256(usuario);
             String cifrarcontra = HelperCifrado.CifrarSHA256(contraseña);
 
             System.out.println("usu ci inter" + "\t" + cifrarusu);
             System.out.println("usu con inter" + "\t" + cifrarcontra);
             System.out.println("Usu" + cifrarusu);
-            
-            if (usuario.equals("Admin")) {
-                usuAdmin = new Administrador("Admin", "12345");
-            } else {
-                JOptionPane.showMessageDialog(null, "Usuario o contraseña invalida");
 
-            }
-            if (usuario.equals("Cliente")) {
-                usuCliente = new Cliente("Cliente", "12345");
-            } else {
-                JOptionPane.showMessageDialog(null, "Usuario o contraseña invalida");
-
-            }
             if (usuCliente instanceof Cliente) {
                 boolean rta = usuCliente.LogOn(cifrarusu, cifrarcontra);
 
