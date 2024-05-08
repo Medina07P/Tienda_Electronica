@@ -38,10 +38,11 @@ public class InicioSesionAdministrador extends javax.swing.JFrame {
 
 public InicioSesionAdministrador() {
         initComponents();
+        this.setLocationRelativeTo(null);
         Conexion.Conectar();
         Path currentRelativePath = Paths.get("");
          s = currentRelativePath.toAbsolutePath().toString();
-         pathc = s + "\\Images\\"+"Background"+".jpeg";
+         pathc = s + "\\Images\\"+"Background"+".PNG";
         establecerImagen();
     }
 
@@ -120,7 +121,6 @@ public void establecerImagen() {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(500, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -128,7 +128,7 @@ public void establecerImagen() {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 96, 143, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 143, -1));
 
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,28 +137,27 @@ public void establecerImagen() {
         });
         getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 149, 143, -1));
 
-        IniciarSesion.setBackground(new java.awt.Color(0, 0, 204));
-        IniciarSesion.setForeground(new java.awt.Color(0, 255, 255));
+        IniciarSesion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         IniciarSesion.setText("Iniciar Sesion");
         IniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IniciarSesionActionPerformed(evt);
             }
         });
-        getContentPane().add(IniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, -1, -1));
+        getContentPane().add(IniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, -1, -1));
 
         jLabel1.setForeground(new java.awt.Color(0, 255, 255));
         jLabel1.setText("Usuario");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 99, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, -1, -1));
 
         jLabel2.setForeground(new java.awt.Color(0, 255, 255));
         jLabel2.setText("Contraseña");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 152, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
 
         jLabel3.setForeground(new java.awt.Color(0, 255, 255));
         jLabel3.setText("Inicio de Sesion Administrador");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 6, -1, -1));
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 460));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
