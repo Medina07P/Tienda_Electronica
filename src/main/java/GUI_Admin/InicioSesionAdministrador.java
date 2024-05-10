@@ -43,7 +43,7 @@ public class InicioSesionAdministrador extends javax.swing.JFrame {
         Conexion.Conectar();
         Path currentRelativePath = Paths.get("");
         s = currentRelativePath.toAbsolutePath().toString();
-        pathc = s + "\\Images\\" + "Background" + ".PNG";
+        pathc = s + "\\Images\\" + "Background" + ".jpeg";
         establecerImagen();
     }
 
@@ -65,7 +65,7 @@ public class InicioSesionAdministrador extends javax.swing.JFrame {
                 usuCliente = new Cliente("Cliente", "12345");
             }
             else{
-                JOptionPane.showMessageDialog(null, "Usuario o contraseña invalida");
+                JOptionPane.showMessageDialog(null, "Usuario o contraseña invalida.");
                  jTextField1.setBorder(new LineBorder(Color.RED, 2));
                 jPasswordField1.setBorder(new LineBorder(Color.RED, 2));
            
@@ -142,25 +142,26 @@ public class InicioSesionAdministrador extends javax.swing.JFrame {
         IniciarSesion = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTextField1.setBackground(new java.awt.Color(0, 51, 153));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 143, -1));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 140, -1));
 
+        jPasswordField1.setBackground(new java.awt.Color(0, 51, 153));
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordField1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 149, 143, -1));
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 140, -1));
 
         IniciarSesion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         IniciarSesion.setText("Iniciar Sesion");
@@ -171,17 +172,15 @@ public class InicioSesionAdministrador extends javax.swing.JFrame {
         });
         getContentPane().add(IniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, -1, -1));
 
-        jLabel1.setForeground(new java.awt.Color(0, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Usuario");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, -1, 20));
 
-        jLabel2.setForeground(new java.awt.Color(0, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Contraseña");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
-
-        jLabel3.setForeground(new java.awt.Color(0, 255, 255));
-        jLabel3.setText("Inicio de Sesion Administrador");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, -1));
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 300));
 
         pack();
@@ -238,7 +237,6 @@ public class InicioSesionAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton IniciarSesion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;

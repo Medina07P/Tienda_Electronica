@@ -47,7 +47,7 @@ public class BuscarPersonaAdministrador extends javax.swing.JFrame {
        Path currentRelativePath = Paths.get("");
          s = currentRelativePath.toAbsolutePath().toString();
          s1 = currentRelativePath.toAbsolutePath().toString();
-         pathc1 = s1 + "\\Images\\"+"Background"+".jpeg";
+         pathc1 = s1 + "\\Images\\"+"Background"+".PNG";
                 establecerImagenBack();
     }
 
@@ -74,19 +74,19 @@ public class BuscarPersonaAdministrador extends javax.swing.JFrame {
         setTitle("Buscar Persona Administrador");
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Buscar Persona");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 14, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Codigo");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 72, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(0, 0, 204));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 204, 204));
+        jButton2.setForeground(new java.awt.Color(51, 255, 255));
         jButton2.setText("Buscar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,14 +103,14 @@ public class BuscarPersonaAdministrador extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(0, 0, 204));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 204, 204));
+        jButton1.setForeground(new java.awt.Color(51, 255, 255));
         jButton1.setText("Atras");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 260, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, -1, -1));
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 330));
 
         pack();
