@@ -169,7 +169,7 @@ public class InicioSesionAdministrador extends javax.swing.JFrame {
                 IniciarSesionActionPerformed(evt);
             }
         });
-        getContentPane().add(IniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, -1, -1));
+        getContentPane().add(IniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 180, -1, -1));
 
         jLabel1.setForeground(new java.awt.Color(0, 255, 255));
         jLabel1.setText("Usuario");
