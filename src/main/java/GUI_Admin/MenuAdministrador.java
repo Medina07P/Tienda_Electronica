@@ -28,7 +28,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         Path currentRelativePath = Paths.get("");
          s = currentRelativePath.toAbsolutePath().toString();
-         pathc = s + "\\Images\\"+"Background"+".jpeg";
+         pathc = s + "\\Images\\"+"Background2"+".jpg";
         establecerImagen();
     }
   //Método para establecer imagen

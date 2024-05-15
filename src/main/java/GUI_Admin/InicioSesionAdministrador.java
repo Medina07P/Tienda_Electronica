@@ -43,7 +43,7 @@ public class InicioSesionAdministrador extends javax.swing.JFrame {
         Conexion.Conectar();
         Path currentRelativePath = Paths.get("");
         s = currentRelativePath.toAbsolutePath().toString();
-        pathc = s + "\\Images\\" + "Background" + ".jpeg";
+        pathc = s + "\\Images\\" + "Background" + ".jpg";
         establecerImagen();
     }
 

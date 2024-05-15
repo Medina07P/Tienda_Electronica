@@ -55,7 +55,7 @@ public class RegistrarPersonaAdministrador extends javax.swing.JFrame {
         
         Path currentRelativePath = Paths.get("");
          s = currentRelativePath.toAbsolutePath().toString();
-         pathc = s + "\\Images\\"+"Background"+".jpeg";
+         pathc = s + "\\Images\\"+"Background2"+".jpg";
         establecerImagen();
 
     }
