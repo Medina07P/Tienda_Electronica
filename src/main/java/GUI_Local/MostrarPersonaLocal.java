@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,15 +27,25 @@ public class MostrarPersonaLocal extends javax.swing.JFrame {
      * Creates new form MostrarPersonaLocal
      */
       public String pathc;
+      public String pathc1;
+      public String pathc2;
     public String s;
+    public String s1;
+    public String s2;
     
     public MostrarPersonaLocal() {
         initComponents();
         this.setLocationRelativeTo(null);
          Path currentRelativePath = Paths.get("");
         s = currentRelativePath.toAbsolutePath().toString();
-        pathc = s + "\\Images\\" + "Background" + ".jpg";
+        s1 = currentRelativePath.toAbsolutePath().toString();
+        s2 = currentRelativePath.toAbsolutePath().toString();
+        pathc = s + "\\Images\\" + "Background2" + ".jpg";
+        pathc1 = s + "\\Images\\" + "Atras" + ".PNG";
+        pathc2 = s + "\\Images\\" + "Ver" + ".PNG";
         establecerImagen();
+        establecerImagenatras();
+        establecerImagenver();
     }
 
     /**
@@ -56,18 +67,47 @@ public class MostrarPersonaLocal extends javax.swing.JFrame {
             System.err.println(ioexception);
         }
     }
+         public void establecerImagenatras() {
+        
+        Image img = null;
+        try {
+            File file = new File(pathc1);
+           img = ImageIO.read(new File(pathc1));
+            //5. Setear la imagen al JLabel
+            jButton2.setIcon(new ImageIcon(img));
+        } catch (IOException ioexception) {
+            System.err.println(ioexception);
+        }
+    }
+    public void establecerImagenver() {
+        
+        Image img = null;
+        try {
+            File file = new File(pathc2);
+           img = ImageIO.read(new File(pathc2));
+            //5. Setear la imagen al JLabel
+            jButton1.setIcon(new ImageIcon(img));
+        } catch (IOException ioexception) {
+            System.err.println(ioexception);
+        }
+    }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Mostrar Persona Local");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, -1, -1));
 
         jTextPane1.setEditable(false);
         jScrollPane1.setViewportView(jTextPane1);
@@ -77,30 +117,23 @@ public class MostrarPersonaLocal extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 0, 255));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Mostrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 265, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, -1, -1));
 
         jButton2.setBackground(new java.awt.Color(0, 0, 255));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Volver");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 265, -1, -1));
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 410, 300));
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Mostrar Persona Local");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 410, 330));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -108,11 +141,14 @@ public class MostrarPersonaLocal extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try{
             PersonaDAO dao= new PersonaDAO();
-           
             ArrayList<Persona> listaper= dao.getPersona();
+            if(listaper.isEmpty()){ 
+                JOptionPane.showMessageDialog(null, "No hay personas registradas");
+                
+            }else{
             String imp=Helpers.HelperImpresion.ImprimirInfoInterfaz(listaper);
             jTextPane1.setText(imp);
-            
+            }
             
         }catch(Exception e)
         {

@@ -58,7 +58,7 @@ public class BuscarPersonaAdministrador extends javax.swing.JFrame {
          pathc3 = s3 + "\\Images\\"+"Lupa"+".PNG";
                 establecerImagenBack();
                 establecerImagenLupa();
-                establecerImagenbatras();
+                establecerImagenatras();
     }
 
     /**
@@ -102,7 +102,7 @@ public class BuscarPersonaAdministrador extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(309, 68, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(309, 68, 50, -1));
 
         jScrollPane1.setViewportView(jTextPane1);
 
@@ -118,7 +118,7 @@ public class BuscarPersonaAdministrador extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 260, 50, -1));
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 330));
 
         pack();
@@ -182,7 +182,7 @@ public class BuscarPersonaAdministrador extends javax.swing.JFrame {
             System.err.println(ioexception);
         }
     }
-     public void establecerImagenbatras() {
+     public void establecerImagenatras() {
         
         Image img = null;
         try {

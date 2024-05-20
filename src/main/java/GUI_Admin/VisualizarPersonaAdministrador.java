@@ -14,6 +14,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,7 +23,12 @@ import javax.swing.ImageIcon;
 public class VisualizarPersonaAdministrador extends javax.swing.JFrame {
 
     public String pathc;
+    public String pathc1;
+    public String pathc2;
     public String s;
+    public String s1;
+    public String s2;
+    
      ArrayList<Persona> lspersonasnube;
 
     public VisualizarPersonaAdministrador() {
@@ -30,8 +36,14 @@ public class VisualizarPersonaAdministrador extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         Path currentRelativePath = Paths.get("");
          s = currentRelativePath.toAbsolutePath().toString();
+         s1 = currentRelativePath.toAbsolutePath().toString();
+         s2 = currentRelativePath.toAbsolutePath().toString();
          pathc = s + "\\Images\\"+"Background2"+".jpg";
+         pathc1 = s1 + "\\Images\\"+"Atras"+".PNG";
+         pathc2 = s2 + "\\Images\\"+"Ver"+".PNG";
         establecerImagen();
+        establecerImagenatras();
+        establecerImagenver();
     }
     //Método para establecer imagen
 
@@ -43,6 +55,30 @@ public class VisualizarPersonaAdministrador extends javax.swing.JFrame {
             img = ImageIO.read(new File(pathc));
             //5. Setear la imagen al JLabel
             jLabel4.setIcon(new ImageIcon(img));
+        } catch (IOException ioexception) {
+            System.err.println(ioexception);
+        }
+    }
+    public void establecerImagenatras() {
+        
+        Image img = null;
+        try {
+            File file = new File(pathc1);
+           img = ImageIO.read(new File(pathc1));
+            //5. Setear la imagen al JLabel
+            jButton2.setIcon(new ImageIcon(img));
+        } catch (IOException ioexception) {
+            System.err.println(ioexception);
+        }
+    }
+    public void establecerImagenver() {
+        
+        Image img = null;
+        try {
+            File file = new File(pathc2);
+           img = ImageIO.read(new File(pathc2));
+            //5. Setear la imagen al JLabel
+            jButton1.setIcon(new ImageIcon(img));
         } catch (IOException ioexception) {
             System.err.println(ioexception);
         }
@@ -80,7 +116,6 @@ public class VisualizarPersonaAdministrador extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 51, 204));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(51, 255, 255));
-        jButton1.setText("Mostrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -91,14 +126,13 @@ public class VisualizarPersonaAdministrador extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(0, 0, 204));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(51, 255, 255));
-        jButton2.setText("Atras");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 248, -1, -1));
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 460, 390));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 420, 350));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -112,8 +146,13 @@ public class VisualizarPersonaAdministrador extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         lspersonasnube = PersonaProvider.CargarInfoPersona();
+        if(lspersonasnube.isEmpty()){ 
+                JOptionPane.showMessageDialog(null, "No hay personas registradas");
+                
+            }else{
         String im=Helpers.HelperImpresion.ImprimirInfoInterfaz(lspersonasnube);
         jTextPane1.setText(im);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

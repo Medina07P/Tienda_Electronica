@@ -23,15 +23,25 @@ public class EscogerBD extends javax.swing.JFrame {
      * Creates new form EscogerBD
      */
      public String pathc;
+     public String pathc1;
+     public String pathc2;
     public String s;
+    public String s1;
+    public String s2;
     
     public EscogerBD() {
         initComponents();
         this.setLocationRelativeTo(null);
          Path currentRelativePath = Paths.get("");
         s = currentRelativePath.toAbsolutePath().toString();
-        pathc = s + "\\Images\\" + "Background" + ".jpg";
+        s1 = currentRelativePath.toAbsolutePath().toString();
+        s2 = currentRelativePath.toAbsolutePath().toString();
+        pathc = s + "\\Images\\" + "Background2" + ".jpg";
+        pathc1 = s1 + "\\Images\\" + "Nube" + ".PNG";
+        pathc2 = s2 + "\\Images\\" + "Local" + ".PNG";
         establecerImagen();
+        establecerImagenNube();
+        establecerImagenLocal();
     }
 
     /**
@@ -52,6 +62,30 @@ public class EscogerBD extends javax.swing.JFrame {
             System.err.println(ioexception);
         }
     }
+     public void establecerImagenNube() {
+        
+        Image img = null;
+        try {
+            File file = new File(pathc1);
+           img = ImageIO.read(new File(pathc1));
+            //5. Setear la imagen al JLabel
+            jButton1.setIcon(new ImageIcon(img));
+        } catch (IOException ioexception) {
+            System.err.println(ioexception);
+        }
+    }
+      public void establecerImagenLocal() {
+        
+        Image img = null;
+        try {
+            File file = new File(pathc2);
+           img = ImageIO.read(new File(pathc2));
+            //5. Setear la imagen al JLabel
+            jButton2.setIcon(new ImageIcon(img));
+        } catch (IOException ioexception) {
+            System.err.println(ioexception);
+        }
+    }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -66,7 +100,6 @@ public class EscogerBD extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 0, 204));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Nube");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -77,7 +110,6 @@ public class EscogerBD extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(0, 0, 204));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Local");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -85,11 +117,11 @@ public class EscogerBD extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(331, 167, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Escoja la Base de Datos:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 83, -1, -1));
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 300));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

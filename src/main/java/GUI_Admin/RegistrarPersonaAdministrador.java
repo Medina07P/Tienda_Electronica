@@ -37,7 +37,13 @@ public class RegistrarPersonaAdministrador extends javax.swing.JFrame {
     int numglobal = 0;
     int band = 0;
       public String pathc;
+      public String pathc1;
+      public String pathc2;
+      public String pathc3;
      public String s;
+     public String s1;
+     public String s2;
+     public String s3;
 
     public RegistrarPersonaAdministrador() {
         initComponents();
@@ -53,10 +59,21 @@ public class RegistrarPersonaAdministrador extends javax.swing.JFrame {
         jButton4.setVisible(false);
         jLabel12.setVisible(false);
         
+        
         Path currentRelativePath = Paths.get("");
          s = currentRelativePath.toAbsolutePath().toString();
+         s1 = currentRelativePath.toAbsolutePath().toString();
+         s2 = currentRelativePath.toAbsolutePath().toString();
+         s3 = currentRelativePath.toAbsolutePath().toString();
          pathc = s + "\\Images\\"+"Background2"+".jpg";
+         pathc1 = s1 + "\\Images\\"+"Atras"+".PNG";
+         pathc2 = s2 + "\\Images\\"+"Aceptar"+".PNG";
+         pathc3 = s3 + "\\Images\\"+"Registrar"+".PNG";
         establecerImagen();
+        establecerImagenaceptar();
+        establecerImagenatras();
+        establecerImagenpersona();
+        establecerImagenproducto();
 
     }
 
@@ -234,6 +251,55 @@ public class RegistrarPersonaAdministrador extends javax.swing.JFrame {
             System.err.println(ioexception);
         }
     }
+     
+     public void establecerImagenatras() {
+        
+        Image img = null;
+        try {
+            File file = new File(pathc1);
+           img = ImageIO.read(new File(pathc1));
+            //5. Setear la imagen al JLabel
+            jButton4.setIcon(new ImageIcon(img));
+        } catch (IOException ioexception) {
+            System.err.println(ioexception);
+        }
+    }
+       public void establecerImagenaceptar() {
+        
+        Image img = null;
+        try {
+            File file = new File(pathc2);
+           img = ImageIO.read(new File(pathc2));
+            //5. Setear la imagen al JLabel
+            jButton3.setIcon(new ImageIcon(img));
+        } catch (IOException ioexception) {
+            System.err.println(ioexception);
+        }
+    }
+         public void establecerImagenproducto() {
+        
+        Image img = null;
+        try {
+            File file = new File(pathc3);
+           img = ImageIO.read(new File(pathc3));
+            //5. Setear la imagen al JLabel
+            jButton2.setIcon(new ImageIcon(img));
+        } catch (IOException ioexception) {
+            System.err.println(ioexception);
+        }
+    }
+           public void establecerImagenpersona() {
+        
+        Image img = null;
+        try {
+            File file = new File(pathc3);
+           img = ImageIO.read(new File(pathc3));
+            //5. Setear la imagen al JLabel
+            jButton1.setIcon(new ImageIcon(img));
+        } catch (IOException ioexception) {
+            System.err.println(ioexception);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -337,36 +403,33 @@ public class RegistrarPersonaAdministrador extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 0, 204));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(51, 255, 255));
-        jButton1.setText("Registrar Persona");
         jButton1.setActionCommand("Registrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(325, 432, 140, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 380, 50, 40));
 
         jButton2.setBackground(new java.awt.Color(0, 0, 204));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(51, 255, 255));
-        jButton2.setText("Registrar Productos");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, 160, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, 50, -1));
 
         jButton3.setBackground(new java.awt.Color(0, 0, 204));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(51, 255, 255));
-        jButton3.setText("Aceptar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(378, 40, 80, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 40, 50, -1));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -376,13 +439,12 @@ public class RegistrarPersonaAdministrador extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(0, 0, 204));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton4.setForeground(new java.awt.Color(51, 255, 255));
-        jButton4.setText("Atras");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 432, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 50, 20));
         getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 351, 187, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N

@@ -7,6 +7,7 @@ package GUI_Local;
 import Logica_Conexion.Conexion;
 import Logica_Conexion.PersonaDAO;
 import Logica_Negocio.Persona;
+import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
@@ -17,6 +18,7 @@ import java.sql.PreparedStatement;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.border.LineBorder;
 
 /**
  *
@@ -29,15 +31,20 @@ public class RegistarBDLocal extends javax.swing.JFrame {
      */
      Persona per;
        public String pathc;
+       public String pathc1;
     public String s;
+    public String s1;
     
     public RegistarBDLocal() {
         initComponents();
         this.setLocationRelativeTo(null);
          Path currentRelativePath = Paths.get("");
         s = currentRelativePath.toAbsolutePath().toString();
-        pathc = s + "\\Images\\" + "Background" + ".jpg";
+        s1 = currentRelativePath.toAbsolutePath().toString();
+        pathc = s + "\\Images\\" + "Background2" + ".jpg";
+        pathc1 = s1 + "\\Images\\" + "Registrar" + ".PNG";
         establecerImagen();
+        establecerImagenRegistro();
        
     }
 
@@ -56,6 +63,18 @@ public class RegistarBDLocal extends javax.swing.JFrame {
             img = ImageIO.read(new File(pathc));
             //5. Setear la imagen al JLabel
             jLabel9.setIcon(new ImageIcon(img));
+        } catch (IOException ioexception) {
+            System.err.println(ioexception);
+        }
+    }
+              public void establecerImagenRegistro() {
+        
+        Image img = null;
+        try {
+            File file = new File(pathc1);
+           img = ImageIO.read(new File(pathc1));
+            //5. Setear la imagen al JLabel
+            jButton2.setIcon(new ImageIcon(img));
         } catch (IOException ioexception) {
             System.err.println(ioexception);
         }
@@ -87,13 +106,12 @@ public class RegistarBDLocal extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(0, 0, 255));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Registrar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(353, 321, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 60, 20));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 40, 128, -1));
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 80, 128, -1));
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 120, 128, -1));
@@ -102,53 +120,53 @@ public class RegistarBDLocal extends javax.swing.JFrame {
         getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 232, 128, -1));
         getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 272, 128, -1));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 255, 255));
         jLabel1.setText("Uid");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 46, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 255, 255));
         jLabel2.setText("Nombre");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 83, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 255, 255));
         jLabel3.setText("Apellido");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 123, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(51, 255, 255));
         jLabel4.setText("Direccion");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 161, -1, -1));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 255, 255));
         jLabel5.setText("Cedula");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 201, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 255, 255));
         jLabel6.setText("Productos");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 235, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(51, 255, 255));
         jLabel7.setText("Nombre Imagen");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 278, -1, -1));
 
         jLabel8.setBackground(new java.awt.Color(0, 0, 255));
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Registar Persona Local");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 6, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 360));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String uid= jTextField1.getText();
+String uid= jTextField1.getText();
         String nombre= jTextField2.getText();
         String apellido= jTextField3.getText();
         String direccion= jTextField4.getText();
@@ -156,19 +174,61 @@ public class RegistarBDLocal extends javax.swing.JFrame {
         String producto= jTextField6.getText();
         String nombreimg= jTextField7.getText();
          
+             int res, res1, res2, res3, res4, res5, res6;
+            
+
+        res = Helpers.HelperValidacion.ValidarTodo(nombre);
+        res1 = Helpers.HelperValidacion.ValidarTodo(apellido);
+        res2 = Helpers.HelperValidacion.ValidarTodoLetra(cedula);
+        res3 =  Helpers.HelperValidacion.ValidarTodoDireccion(direccion);
+        res4 = Helpers.HelperValidacion.ValidarTodoSerial(nombreimg);
+        res5 = Helpers.HelperValidacion.ValidarVacio(producto);
+        res6 = Helpers.HelperValidacion.ValidarTodoLetra(uid);
+        if (res == 0 && res1 == 0 && res2 == 0 && res3==0 && res4==0 && res5==0 && res6==0) {
         try{
             per = new Persona(uid, nombre, apellido, direccion, cedula, producto, nombreimg);
             PersonaDAO dao= new PersonaDAO();
             dao.add(per);
             
-        //String consulta="INSERT INTO `persona`(`Uid`, `Nombre`, `Apellido`, `Direccion`, `Cedula`, `Producto`, `Nom_img`) VALUES ('"+uid+"','"+nombre+"','"+apellido+"','"+direccion+"','"+cedula+"','"+producto+"','"+nombreimg+"')";
+        String consulta="INSERT INTO `persona`(`Uid`, `Nombre`, `Apellido`, `Direccion`, `Cedula`, `Producto`, `Nom_img`) VALUES ('"+uid+"','"+nombre+"','"+apellido+"','"+direccion+"','"+cedula+"','"+producto+"','"+nombreimg+"')";
         
           JOptionPane.showMessageDialog(null, "Registro Exitoso");
         }catch(Exception e)
         {
             System.out.println("Excepcion"+ e);
         }
-     
+        }
+        else{
+            if (res6 >= 1) {
+                jTextField1.setBorder(new LineBorder(Color.RED, 2));
+                JOptionPane.showMessageDialog(null, "Revise el campo uid");
+            } 
+             if (res >= 1) {
+                jTextField2.setBorder(new LineBorder(Color.RED, 2));
+                JOptionPane.showMessageDialog(null, "Revise el campo nombre");
+            }
+            if (res1 >= 1) {
+                jTextField3.setBorder(new LineBorder(Color.RED, 2));
+                JOptionPane.showMessageDialog(null, "Revise el campo apellido ");
+            }
+            if (res3 >= 1) {
+                jTextField4.setBorder(new LineBorder(Color.RED, 2));
+                JOptionPane.showMessageDialog(null, "Revise el campo direccion");
+            }
+            if (res2 >= 1) {
+                jTextField5.setBorder(new LineBorder(Color.RED, 2));
+                JOptionPane.showMessageDialog(null, "Revise el campo cedula");
+            } 
+             
+            if (res5 >= 1) {
+                jTextField6.setBorder(new LineBorder(Color.RED, 2));
+                JOptionPane.showMessageDialog(null, "Revise el campo Producto");
+            } 
+            if (res4 >= 1) {
+                jTextField7.setBorder(new LineBorder(Color.RED, 2));
+                JOptionPane.showMessageDialog(null, "Revise el campo Nombre Imagen");
+            } 
+        }
         MenuLocal menu = new MenuLocal();
         menu.setVisible(true);
         dispose();

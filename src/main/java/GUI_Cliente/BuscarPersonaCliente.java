@@ -36,18 +36,28 @@ public class BuscarPersonaCliente extends javax.swing.JFrame {
     Persona objper=null;
     String pathc ;
     String pathc1 ;
+    String pathc2;
+    String pathc3 ;
    
    public String s;
    public String s1;
+   public String s2;
+   public String s3;
 
     public BuscarPersonaCliente() {
         initComponents();
         this.setLocationRelativeTo(null);
         Path currentRelativePath = Paths.get("");
-         s = currentRelativePath.toAbsolutePath().toString();
+           s = currentRelativePath.toAbsolutePath().toString();
          s1 = currentRelativePath.toAbsolutePath().toString();
-         pathc1 = s1 + "\\Images\\"+"Background"+".jpeg";
+         s2 = currentRelativePath.toAbsolutePath().toString();
+         s3 = currentRelativePath.toAbsolutePath().toString();
+         pathc1 = s1 + "\\Images\\"+"Background2"+".jpg";
+         pathc2 = s2 + "\\Images\\"+"Atras"+".PNG";
+         pathc3 = s3 + "\\Images\\"+"Lupa"+".PNG";
                 establecerImagenBack();
+                establecerImagenLupa();
+                establecerImagenatras();
     }
 
     /**
@@ -88,7 +98,6 @@ public class BuscarPersonaCliente extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(0, 0, 204));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(0, 255, 255));
-        jButton2.setText("Buscar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -104,7 +113,6 @@ public class BuscarPersonaCliente extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 0, 204));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(51, 255, 255));
-        jButton1.setText("Atras");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -164,6 +172,30 @@ public class BuscarPersonaCliente extends javax.swing.JFrame {
            img = ImageIO.read(new File(pathc1));
             //5. Setear la imagen al JLabel
             jLabel4.setIcon(new ImageIcon(img));
+        } catch (IOException ioexception) {
+            System.err.println(ioexception);
+        }
+    }
+             public void establecerImagenatras() {
+        
+        Image img = null;
+        try {
+            File file = new File(pathc2);
+           img = ImageIO.read(new File(pathc2));
+            //5. Setear la imagen al JLabel
+            jButton1.setIcon(new ImageIcon(img));
+        } catch (IOException ioexception) {
+            System.err.println(ioexception);
+        }
+    }
+public void establecerImagenLupa() {
+        
+        Image img = null;
+        try {
+            File file = new File(pathc3);
+           img = ImageIO.read(new File(pathc3));
+            //5. Setear la imagen al JLabel
+            jButton2.setIcon(new ImageIcon(img));
         } catch (IOException ioexception) {
             System.err.println(ioexception);
         }
