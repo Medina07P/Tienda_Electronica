@@ -19,6 +19,7 @@ import java.util.List;
 public class PersonaDAO implements DAOInterfacePersona {
 
     public static Connection con = Conexion.getConnection();
+    
 
     @Override
     public int add(Persona per) throws SQLException {

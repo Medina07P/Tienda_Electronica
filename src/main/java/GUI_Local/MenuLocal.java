@@ -165,8 +165,10 @@ public class MenuLocal extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         PersonaDAO dao = new PersonaDAO();
         try {
-            dao.close();
+           
             JOptionPane.showMessageDialog(null, "Conexion Cerrada");
+            Portada por= new Portada();
+            por.setVisible(true);
             dispose();
         } catch (Exception e) {
             System.out.println("Excepcion" + e);

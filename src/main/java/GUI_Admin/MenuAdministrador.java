@@ -4,11 +4,13 @@
  */
 package GUI_Admin;
 
+import Logica_Conexion.PersonaDAO;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.SQLException;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
@@ -21,29 +23,32 @@ public class MenuAdministrador extends javax.swing.JFrame {
     /**
      * Creates new form MenuAdministrador
      */
- public String pathc;
- public String s;
+    public String pathc;
+    public String s;
+
     public MenuAdministrador() {
         initComponents();
         this.setLocationRelativeTo(null);
         Path currentRelativePath = Paths.get("");
-         s = currentRelativePath.toAbsolutePath().toString();
-         pathc = s + "\\Images\\"+"Background2"+".jpg";
+        s = currentRelativePath.toAbsolutePath().toString();
+        pathc = s + "\\Images\\" + "Background2" + ".jpg";
         establecerImagen();
     }
-  //Método para establecer imagen
-        public void establecerImagen() {
-       
+    //Método para establecer imagen
+
+    public void establecerImagen() {
+
         Image img = null;
         try {
             File file = new File(pathc);
-           img = ImageIO.read(new File(pathc));
+            img = ImageIO.read(new File(pathc));
             //5. Setear la imagen al JLabel
             jLabel4.setIcon(new ImageIcon(img));
         } catch (IOException ioexception) {
             System.err.println(ioexception);
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -58,6 +63,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -71,7 +77,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 51, 204));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(153, 255, 51));
-        jButton1.setText("Registrar persona");
+        jButton1.setText("Registrar Persona");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -82,7 +88,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
         jButton2.setBackground(new java.awt.Color(0, 51, 204));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(153, 255, 51));
-        jButton2.setText("Visualizar persona");
+        jButton2.setText("Visualizar Persona");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -112,6 +118,17 @@ public class MenuAdministrador extends javax.swing.JFrame {
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        jButton5.setBackground(new java.awt.Color(0, 51, 204));
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(153, 255, 51));
+        jButton5.setText("Eliminar Persona");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 150, -1));
+
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 370));
 
@@ -121,30 +138,40 @@ public class MenuAdministrador extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         RegistrarPersonaAdministrador registrar = new RegistrarPersonaAdministrador();
-                registrar.setVisible(true);
-                dispose();
+        registrar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         VisualizarPersonaAdministrador visualizar = new VisualizarPersonaAdministrador();
-                visualizar.setVisible(true);
-                dispose();
+        visualizar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         BuscarPersonaAdministrador buscar = new BuscarPersonaAdministrador();
-                buscar.setVisible(true);
-                dispose();
+        buscar.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        InicioSesionAdministrador inicio= new InicioSesionAdministrador();
+        InicioSesionAdministrador inicio = new InicioSesionAdministrador();
         inicio.setVisible(true);
         dispose();
+     
+
+
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        EliminarPersonaAdministrador eliminar = new EliminarPersonaAdministrador();
+        eliminar.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,6 +213,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables

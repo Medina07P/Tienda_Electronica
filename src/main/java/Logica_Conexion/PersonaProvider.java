@@ -12,6 +12,7 @@ import com.google.cloud.firestore.CollectionReference;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
+import com.google.cloud.firestore.Precondition;
 import com.google.cloud.firestore.QuerySnapshot;
 import com.google.cloud.firestore.WriteResult;
 import com.google.firebase.cloud.FirestoreClient;
@@ -19,6 +20,7 @@ import java.nio.charset.CodingErrorAction;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -131,5 +133,24 @@ public class PersonaProvider {
             }
         }
         return objper1;
+    }
+    public static boolean EliminarPersona(String coleccion, String documento) {
+        db = FirestoreClient.getFirestore();
+        boolean res = RetornarUid(documento);
+        System.out.println("Respuesta" + res);
+
+        try {
+            if (res != false) {
+                DocumentReference docref = db.collection(coleccion).document(documento);
+                ApiFuture<WriteResult> result = docref.delete(Precondition.NONE);
+                System.out.println("Eliminado exitosamente");
+                return true;
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Cliente no encontrado");
+        }
+
+        return false;
     }
 }

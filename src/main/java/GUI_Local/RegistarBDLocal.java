@@ -216,6 +216,7 @@ String uid= jTextField1.getText();
             PersonaDAO dao= new PersonaDAO();
             dao.add(per);
             
+            
         String consulta="INSERT INTO `persona`(`Uid`, `Nombre`, `Apellido`, `Direccion`, `Cedula`, `Producto`, `Nom_img`) VALUES ('"+uid+"','"+nombre+"','"+apellido+"','"+direccion+"','"+cedula+"','"+producto+"','"+nombreimg+"')";
         
           JOptionPane.showMessageDialog(null, "Registro Exitoso");
