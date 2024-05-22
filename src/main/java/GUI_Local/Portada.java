@@ -11,6 +11,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,15 +23,20 @@ public class Portada extends javax.swing.JFrame {
      * Creates new form Portada
      */
     public String pathc;
+    public String pathc1;
     public String s;
+    public String s1;
     
     public Portada() {
         initComponents();
         this.setLocationRelativeTo(null);
          Path currentRelativePath = Paths.get("");
         s = currentRelativePath.toAbsolutePath().toString();
+        s1 = currentRelativePath.toAbsolutePath().toString();
         pathc = s + "\\Images\\" + "Background" + ".jpg";
+        pathc1 = s1 + "\\Images\\" + "Salir" + ".PNG";
         establecerImagen();
+        establecerImagenSalir();
     }
 
     /**
@@ -52,11 +58,24 @@ public class Portada extends javax.swing.JFrame {
             System.err.println(ioexception);
         }
     }
+          public void establecerImagenSalir() {
+
+        Image img = null;
+        try {
+            File file = new File(pathc1);
+            img = ImageIO.read(new File(pathc1));
+            //5. Setear la imagen al JLabel
+            jButton2.setIcon(new ImageIcon(img));
+        } catch (IOException ioexception) {
+            System.err.println(ioexception);
+        }
+    }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,8 +86,8 @@ public class Portada extends javax.swing.JFrame {
         jLabel2.setText("Bienvenido");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 153));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(102, 102, 102));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Avanzar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -77,6 +96,14 @@ public class Portada extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 90, 30));
+
+        jButton2.setBackground(new java.awt.Color(102, 102, 102));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, -1));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 300));
 
         pack();
@@ -87,6 +114,12 @@ public class Portada extends javax.swing.JFrame {
         esco.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Saliendo del programa");
+        System.exit(0);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -125,6 +158,7 @@ public class Portada extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -26,19 +27,24 @@ public class Conexion {
     public static Firestore db;
      private static Connection con = null;
 
-    public static void Conectar() {
+        public static void Conectar() {
         try {
-            FileInputStream as = new FileInputStream("tienda-electronica.json");
-            FirebaseOptions options = FirebaseOptions.builder()
-                    .setCredentials(GoogleCredentials.fromStream(as))
-                    .build();
+            List<FirebaseApp> firebaseApps = FirebaseApp.getApps();
+            if (firebaseApps == null || firebaseApps.isEmpty()) {
+                FileInputStream as = new FileInputStream("tienda-electronica.json");
+                FirebaseOptions options = FirebaseOptions.builder()
+                        .setCredentials(GoogleCredentials.fromStream(as))
+                        .build();
 
-            FirebaseApp.initializeApp(options);
-            db= FirestoreClient.getFirestore();
-            System.out.println("Conexion Exitosa");
-            
+                FirebaseApp.initializeApp(options);
+                System.out.println("Conexión a Firestore establecida.");
+            } else {
+                System.out.println("FirebaseApp ya está inicializado.");
+            }
+
+            db = FirestoreClient.getFirestore();
         } catch (IOException e) {
-            System.out.println("Error:" + e.getMessage());
+            System.out.println("Error: " + e.getMessage());
         }
     }
     
@@ -56,4 +62,25 @@ public class Conexion {
         return con;
     }
 
+
+    
+    
+    public static void CerrarConexion() {
+        if (db != null) {
+            try {
+                // No hay método explícito para cerrar Firestore, así que simplemente lo establecemos a null
+                db = null;
+                System.out.println("Conexión a Firestore cerrada.");
+            } catch (Exception e) {
+                System.out.println("Error al cerrar la conexión: " + e.getMessage());
+            }
+        } else {
+            System.out.println("No hay conexión activa para cerrar.");
+        }
+    }
+
+    public static Firestore getFirestore() {
+        return db;
+    }
+     
 }

@@ -24,33 +24,39 @@ import javax.swing.border.LineBorder;
  *
  * @author Santiago Lopez
  */
-public class RegistarBDLocal extends javax.swing.JFrame {
+public class EditarPersona extends javax.swing.JFrame {
 
     /**
      * Creates new form RegistarBDLocal
      */
-     Persona per;
-       public String pathc;
-       public String pathc1;
-       public String pathc2;
+    Persona per;
+    public String pathc;
+    public String pathc1;
+    public String pathc2;
+    public String pathc3;
     public String s;
     public String s1;
     public String s2;
+    public String s3;
     
-    public RegistarBDLocal() {
+    public EditarPersona() {
         initComponents();
         this.setLocationRelativeTo(null);
-         Path currentRelativePath = Paths.get("");
+        Path currentRelativePath = Paths.get("");
         s = currentRelativePath.toAbsolutePath().toString();
         s1 = currentRelativePath.toAbsolutePath().toString();
         s2 = currentRelativePath.toAbsolutePath().toString();
+        s3 = currentRelativePath.toAbsolutePath().toString();
         pathc = s + "\\Images\\" + "Background2" + ".jpg";
-        pathc1 = s1 + "\\Images\\" + "Registrar" + ".PNG";
-        pathc2 = s2 + "\\Images\\" + "Atras" + ".PNG";
+        pathc1 = s1 + "\\Images\\" + "Lupa" + ".PNG";
+        pathc2 = s2 + "\\Images\\" + "Editar" + ".PNG";
+        pathc3 = s3 + "\\Images\\" + "Atras" + ".PNG";
         establecerImagen();
-        establecerImagenRegistro();
+        establecerImagenEditar();
+        establecerImagenLupa();
         establecerImagenatras();
-       
+        jButton2.setVisible(false);
+        
     }
 
     /**
@@ -61,7 +67,7 @@ public class RegistarBDLocal extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     
     public void establecerImagen() {
-
+        
         Image img = null;
         try {
             File file = new File(pathc);
@@ -72,26 +78,38 @@ public class RegistarBDLocal extends javax.swing.JFrame {
             System.err.println(ioexception);
         }
     }
-              public void establecerImagenRegistro() {
+    public void establecerImagenLupa() {
         
         Image img = null;
         try {
             File file = new File(pathc1);
            img = ImageIO.read(new File(pathc1));
             //5. Setear la imagen al JLabel
-            jButton2.setIcon(new ImageIcon(img));
+            jButton1.setIcon(new ImageIcon(img));
         } catch (IOException ioexception) {
             System.err.println(ioexception);
         }
     }
-                       public void establecerImagenatras() {
+    public void establecerImagenEditar() {
         
         Image img = null;
         try {
             File file = new File(pathc2);
            img = ImageIO.read(new File(pathc2));
             //5. Setear la imagen al JLabel
-            jButton1.setIcon(new ImageIcon(img));
+            jButton2.setIcon(new ImageIcon(img));
+        } catch (IOException ioexception) {
+            System.err.println(ioexception);
+        }
+    }
+            public void establecerImagenatras() {
+        
+        Image img = null;
+        try {
+            File file = new File(pathc3);
+           img = ImageIO.read(new File(pathc3));
+            //5. Setear la imagen al JLabel
+            jButton3.setIcon(new ImageIcon(img));
         } catch (IOException ioexception) {
             System.err.println(ioexception);
         }
@@ -116,6 +134,7 @@ public class RegistarBDLocal extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -129,7 +148,7 @@ public class RegistarBDLocal extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 60, 20));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, -1, -1));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 40, 128, -1));
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 80, 128, -1));
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 120, 128, -1));
@@ -176,8 +195,8 @@ public class RegistarBDLocal extends javax.swing.JFrame {
         jLabel8.setBackground(new java.awt.Color(0, 0, 255));
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Registar Persona Local");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
+        jLabel8.setText("Editar Persona Local");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(102, 102, 102));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -185,88 +204,78 @@ public class RegistarBDLocal extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, -1));
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 360));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
+
+        jButton3.setBackground(new java.awt.Color(102, 102, 102));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-String uid= jTextField1.getText();
-        String nombre= jTextField2.getText();
-        String apellido= jTextField3.getText();
-        String direccion= jTextField4.getText();
-        String cedula= jTextField5.getText();
-        String producto= jTextField6.getText();
-        String nombreimg= jTextField7.getText();
-         
-             int res, res1, res2, res3, res4, res5, res6;
-            
-
-        res = Helpers.HelperValidacion.ValidarTodo(nombre);
-        res1 = Helpers.HelperValidacion.ValidarTodo(apellido);
-        res2 = Helpers.HelperValidacion.ValidarTodoLetra(cedula);
-        res3 =  Helpers.HelperValidacion.ValidarTodoDireccion(direccion);
-        res4 = Helpers.HelperValidacion.ValidarTodoSerial(nombreimg);
-        res5 = Helpers.HelperValidacion.ValidarVacio(producto);
-        res6 = Helpers.HelperValidacion.ValidarTodoLetra(uid);
-        if (res == 0 && res1 == 0 && res2 == 0 && res3==0 && res4==0 && res5==0 && res6==0) {
-        try{
-            per = new Persona(uid, nombre, apellido, direccion, cedula, producto, nombreimg);
-            PersonaDAO dao= new PersonaDAO();
-            dao.add(per);
-            
-        String consulta="INSERT INTO `persona`(`Uid`, `Nombre`, `Apellido`, `Direccion`, `Cedula`, `Producto`, `Nom_img`) VALUES ('"+uid+"','"+nombre+"','"+apellido+"','"+direccion+"','"+cedula+"','"+producto+"','"+nombreimg+"')";
         
-          JOptionPane.showMessageDialog(null, "Registro Exitoso");
-        }catch(Exception e)
-        {
-            System.out.println("Excepcion"+ e);
+        String uid = jTextField1.getText();
+        String nombre = jTextField2.getText();
+        String apellido = jTextField3.getText();
+        String direccion = jTextField4.getText();
+        String cedula = jTextField5.getText();
+        String producto = jTextField6.getText();
+        String nombreimg = jTextField7.getText();
+        
+        try {
+            per = new Persona(uid, nombre, apellido, cedula, direccion, producto, nombreimg);
+            PersonaDAO dao = new PersonaDAO();
+            dao.update(per);
+            JOptionPane.showMessageDialog(null, "Actualizar Exitoso");
+        } catch (Exception e) {
+            System.out.println("Excepcion" + e);
         }
-        }
-        else{
-            if (res6 >= 1) {
-                jTextField1.setBorder(new LineBorder(Color.RED, 2));
-                JOptionPane.showMessageDialog(null, "Revise el campo uid");
-            } 
-             if (res >= 1) {
-                jTextField2.setBorder(new LineBorder(Color.RED, 2));
-                JOptionPane.showMessageDialog(null, "Revise el campo nombre");
-            }
-            if (res1 >= 1) {
-                jTextField3.setBorder(new LineBorder(Color.RED, 2));
-                JOptionPane.showMessageDialog(null, "Revise el campo apellido ");
-            }
-            if (res3 >= 1) {
-                jTextField4.setBorder(new LineBorder(Color.RED, 2));
-                JOptionPane.showMessageDialog(null, "Revise el campo direccion");
-            }
-            if (res2 >= 1) {
-                jTextField5.setBorder(new LineBorder(Color.RED, 2));
-                JOptionPane.showMessageDialog(null, "Revise el campo cedula");
-            } 
-             
-            if (res5 >= 1) {
-                jTextField6.setBorder(new LineBorder(Color.RED, 2));
-                JOptionPane.showMessageDialog(null, "Revise el campo Producto");
-            } 
-            if (res4 >= 1) {
-                jTextField7.setBorder(new LineBorder(Color.RED, 2));
-                JOptionPane.showMessageDialog(null, "Revise el campo Nombre Imagen");
-            } 
-        }
+        
         MenuLocal menu = new MenuLocal();
         menu.setVisible(true);
         dispose();
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-     MenuLocal menu = new MenuLocal();
-        menu.setVisible(true);
-        dispose();   
+        PersonaDAO per = new PersonaDAO();
+        String id = jTextField1.getText();
+        try {
+            Persona persona = per.getPersona(id);
+            if (persona == null) {
+                jTextField1.setBorder(new LineBorder(Color.RED, 2));
+                JOptionPane.showMessageDialog(null, "No se ha encontrado persona");
+            }
+            jTextField1.setText(persona.getUid());
+            jTextField2.setText(persona.getNombre());
+            jTextField3.setText(persona.getApellido());
+            jTextField4.setText(persona.getDireccion());
+            jTextField5.setText(persona.getCedula());
+            jTextField6.setText(persona.getProducto());
+            jTextField7.setText(persona.getNom_img());
+            jButton2.setVisible(true);
+            jTextField1.setEditable(false);
+            
+            
+        } catch (Exception e) {
+            System.out.println("Excepcion" + e);
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        MenuLocal menu = new MenuLocal();
+        menu.setVisible(true);
+        dispose();
+
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -306,6 +315,7 @@ String uid= jTextField1.getText();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

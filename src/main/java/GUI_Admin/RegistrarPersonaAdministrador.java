@@ -400,7 +400,7 @@ public class RegistrarPersonaAdministrador extends javax.swing.JFrame {
         jLabel9.setText("Cedula");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 298, 80, -1));
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 204));
+        jButton1.setBackground(new java.awt.Color(102, 102, 102));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(51, 255, 255));
         jButton1.setActionCommand("Registrar");
@@ -411,7 +411,7 @@ public class RegistrarPersonaAdministrador extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 380, 50, 40));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 204));
+        jButton2.setBackground(new java.awt.Color(102, 102, 102));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(51, 255, 255));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -421,7 +421,7 @@ public class RegistrarPersonaAdministrador extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, 50, -1));
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 204));
+        jButton3.setBackground(new java.awt.Color(102, 102, 102));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(51, 255, 255));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -436,7 +436,7 @@ public class RegistrarPersonaAdministrador extends javax.swing.JFrame {
         jLabel10.setText("Registrar Persona");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(187, 217, 130, -1));
 
-        jButton4.setBackground(new java.awt.Color(0, 0, 204));
+        jButton4.setBackground(new java.awt.Color(102, 102, 102));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton4.setForeground(new java.awt.Color(51, 255, 255));
         jButton4.addActionListener(new java.awt.event.ActionListener() {

@@ -6,7 +6,6 @@ package GUI_Local;
 
 import Logica_Conexion.PersonaDAO;
 import Logica_Negocio.Persona;
-import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
@@ -15,13 +14,12 @@ import java.nio.file.Paths;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import javax.swing.border.LineBorder;
 
 /**
  *
  * @author Santiago Lopez
  */
-public class BuscarPersonaLocal extends javax.swing.JFrame {
+public class EliminarPersona extends javax.swing.JFrame {
 
     /**
      * Creates new form BuscarPersonaLocal
@@ -36,7 +34,7 @@ public class BuscarPersonaLocal extends javax.swing.JFrame {
     public String s2;
     public String s3;
 
-    public BuscarPersonaLocal() {
+    public EliminarPersona() {
         initComponents();
         this.setLocationRelativeTo(null);
         Path currentRelativePath = Paths.get("");
@@ -46,10 +44,10 @@ public class BuscarPersonaLocal extends javax.swing.JFrame {
         s3 = currentRelativePath.toAbsolutePath().toString();
         pathc1 = s1 + "\\Images\\" + "Background2" + ".jpg";
         pathc2 = s2 + "\\Images\\" + "Atras" + ".PNG";
-        pathc3 = s3 + "\\Images\\" + "Lupa" + ".PNG";
+        pathc3 = s3 + "\\Images\\" + "Borrar" + ".PNG";
         establecerImagenBack();
         establecerImagenatras();
-        establecerImagenLupa();
+        establecerImagenBorrar();
     }
 
     public void establecerImagenBack() {
@@ -84,24 +82,26 @@ public class BuscarPersonaLocal extends javax.swing.JFrame {
             System.err.println(ioexception);
         }
     }
-                 public void establecerImagenatras() {
-        
+
+    public void establecerImagenatras() {
+
         Image img = null;
         try {
             File file = new File(pathc2);
-           img = ImageIO.read(new File(pathc2));
+            img = ImageIO.read(new File(pathc2));
             //5. Setear la imagen al JLabel
             jButton2.setIcon(new ImageIcon(img));
         } catch (IOException ioexception) {
             System.err.println(ioexception);
         }
     }
-public void establecerImagenLupa() {
-        
+
+    public void establecerImagenBorrar() {
+
         Image img = null;
         try {
             File file = new File(pathc3);
-           img = ImageIO.read(new File(pathc3));
+            img = ImageIO.read(new File(pathc3));
             //5. Setear la imagen al JLabel
             jButton1.setIcon(new ImageIcon(img));
         } catch (IOException ioexception) {
@@ -112,13 +112,13 @@ public void establecerImagenLupa() {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
+        jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -128,12 +128,6 @@ public void establecerImagenLupa() {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Digite el Uid");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 44, -1, -1));
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 100, 120, 136));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Buscar Persona Local");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, -1, -1));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,6 +139,7 @@ public void establecerImagenLupa() {
         jScrollPane1.setViewportView(jTextPane1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 100, 222, 144));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(258, 100, 120, 136));
 
         jButton1.setBackground(new java.awt.Color(102, 102, 102));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -154,7 +149,7 @@ public void establecerImagenLupa() {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(306, 37, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, 50, -1));
 
         jButton2.setBackground(new java.awt.Color(102, 102, 102));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -165,7 +160,12 @@ public void establecerImagenLupa() {
             }
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, -1));
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 300));
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Eliminar Persona Local");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 320));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -178,15 +178,16 @@ public void establecerImagenLupa() {
         PersonaDAO per = new PersonaDAO();
         String id = jTextField1.getText();
         try {
-            Persona persona = per.getPersona(id);
-            if (persona==null) {
-                jTextField1.setBorder(new LineBorder(Color.RED, 2));
+            if (id != null) {
+                int n = per.delete(id);
+                if (n == 0) {
+                    JOptionPane.showMessageDialog(null, "No se ha encontrado persona");
+                } else {
+                    jTextPane1.setText("Persona Eliminada con uid" + id);
+                }
+            } else {
                 JOptionPane.showMessageDialog(null, "No se ha encontrado persona");
             }
-            String im = Helpers.HelperImpresion.ImprimirInfoInterfazLocal(persona);
-            jTextPane1.setText(im);
-            pathc = s + "\\Images\\" + persona.getNom_img() + ".jpg";
-            establecerImagen();
 
         } catch (Exception e) {
             System.out.println("Excepcion" + e);

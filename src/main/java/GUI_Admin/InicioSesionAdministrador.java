@@ -5,8 +5,11 @@
 package GUI_Admin;
 
 import GUI_Cliente.MenuCliente;
+import GUI_Local.Portada;
 import Helpers.HelperCifrado;
 import Logica_Conexion.Conexion;
+import Logica_Conexion.PersonaDAO;
+import Logica_Conexion.PersonaProvider;
 import Logica_Negocio.Administrador;
 import Logica_Negocio.Cliente;
 import Logica_Negocio.Usuario;
@@ -40,7 +43,6 @@ public class InicioSesionAdministrador extends javax.swing.JFrame {
     public InicioSesionAdministrador() {
         initComponents();
         this.setLocationRelativeTo(null);
-        Conexion.Conectar();
         Path currentRelativePath = Paths.get("");
         s = currentRelativePath.toAbsolutePath().toString();
         pathc = s + "\\Images\\" + "Background" + ".jpg";
@@ -142,12 +144,15 @@ public class InicioSesionAdministrador extends javax.swing.JFrame {
         IniciarSesion = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextField1.setBackground(new java.awt.Color(0, 51, 153));
+        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -156,6 +161,8 @@ public class InicioSesionAdministrador extends javax.swing.JFrame {
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 140, -1));
 
         jPasswordField1.setBackground(new java.awt.Color(0, 51, 153));
+        jPasswordField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jPasswordField1.setForeground(new java.awt.Color(255, 255, 255));
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordField1ActionPerformed(evt);
@@ -181,6 +188,17 @@ public class InicioSesionAdministrador extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Contraseña");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
+
+        jButton1.setBackground(new java.awt.Color(102, 102, 102));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Salir");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 300));
 
         pack();
@@ -197,6 +215,15 @@ public class InicioSesionAdministrador extends javax.swing.JFrame {
     private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPasswordField1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+     Conexion.CerrarConexion(); // Llamar al método para cerrar la conexión de Firestore
+        JOptionPane.showMessageDialog(this, "Sesión cerrada.");
+        Portada por = new Portada();
+       por.setVisible(true);
+        dispose(); // Cerrar la ventana
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,6 +262,7 @@ public class InicioSesionAdministrador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton IniciarSesion;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

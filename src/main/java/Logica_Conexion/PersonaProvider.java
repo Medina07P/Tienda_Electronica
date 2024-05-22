@@ -4,6 +4,7 @@
  */
 package Logica_Conexion;
 
+import static Logica_Conexion.PersonaDAO.con;
 import Logica_Negocio.Persona;
 import Logica_Negocio.Producto;
 import com.google.api.core.ApiFuture;
@@ -15,6 +16,7 @@ import com.google.cloud.firestore.QuerySnapshot;
 import com.google.cloud.firestore.WriteResult;
 import com.google.firebase.cloud.FirestoreClient;
 import java.nio.charset.CodingErrorAction;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
 
