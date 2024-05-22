@@ -68,8 +68,8 @@ public class PersonaDAO implements DAOInterfacePersona {
             per = new Persona(rs.getString("Uid"),
                     rs.getString("Nombre"),
             rs.getString("Apellido"),
-            rs.getString("Cedula"),
-                    rs.getString("Direccion"),
+            rs.getString("Direccion"),
+                    rs.getString("Cedula"),
                     rs.getString("Producto"),
                     rs.getString("Nom_img"));
         }
@@ -93,8 +93,8 @@ public class PersonaDAO implements DAOInterfacePersona {
             Persona per = new Persona(rs.getString("Uid"),
                     rs.getString("Nombre"),
             rs.getString("Apellido"),
-            rs.getString("Cedula"),
-                    rs.getString("Direccion"),
+            rs.getString("Direccion"),
+                    rs.getString("Cedula"),
                     rs.getString("Producto"),
                     rs.getString("Nom_img"));
           
