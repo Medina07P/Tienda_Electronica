@@ -24,15 +24,21 @@ public class MenuLocal extends javax.swing.JFrame {
      * Creates new form MenuLocal
      */
     public String pathc;
+    public String pathc1;
     public String s;
+    public String s1;
+    
 
     public MenuLocal() {
         initComponents();
         this.setLocationRelativeTo(null);
         Path currentRelativePath = Paths.get("");
         s = currentRelativePath.toAbsolutePath().toString();
+        s1 = currentRelativePath.toAbsolutePath().toString();
         pathc = s + "\\Images\\" + "Background2" + ".jpg";
+        pathc1 = s1 + "\\Images\\" + "Salir" + ".PNG";
         establecerImagen();
+        establecerImagenSalir();
     }
 
     /**
@@ -54,6 +60,18 @@ public class MenuLocal extends javax.swing.JFrame {
             System.err.println(ioexception);
         }
     }
+              public void establecerImagenSalir() {
+
+        Image img = null;
+        try {
+            File file = new File(pathc1);
+            img = ImageIO.read(new File(pathc1));
+            //5. Setear la imagen al JLabel
+            jButton7.setIcon(new ImageIcon(img));
+        } catch (IOException ioexception) {
+            System.err.println(ioexception);
+        }
+              }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -64,14 +82,16 @@ public class MenuLocal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(0, 0, 204));
+        jButton1.setBackground(new java.awt.Color(0, 0, 153));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(153, 255, 51));
+        jButton1.setForeground(new java.awt.Color(0, 255, 255));
         jButton1.setText("Registrar Persona Local");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,9 +100,9 @@ public class MenuLocal extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 180, -1));
 
-        jButton2.setBackground(new java.awt.Color(0, 0, 255));
+        jButton2.setBackground(new java.awt.Color(0, 0, 153));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(153, 255, 51));
+        jButton2.setForeground(new java.awt.Color(0, 255, 255));
         jButton2.setText("Mostrar Persona Local");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,9 +111,9 @@ public class MenuLocal extends javax.swing.JFrame {
         });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 180, -1));
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 255));
+        jButton3.setBackground(new java.awt.Color(0, 0, 153));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(153, 255, 51));
+        jButton3.setForeground(new java.awt.Color(0, 255, 255));
         jButton3.setText("Buscar Persona Local");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,25 +122,25 @@ public class MenuLocal extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 180, -1));
 
-        jButton4.setBackground(new java.awt.Color(102, 102, 102));
+        jButton4.setBackground(new java.awt.Color(255, 165, 0));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Salir");
+        jButton4.setText("Cerrar Sesion");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Menu Local");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, -1));
 
-        jButton5.setBackground(new java.awt.Color(0, 0, 255));
+        jButton5.setBackground(new java.awt.Color(0, 0, 153));
         jButton5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(153, 255, 51));
+        jButton5.setForeground(new java.awt.Color(0, 255, 255));
         jButton5.setText("Editar Persona Local");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,9 +149,9 @@ public class MenuLocal extends javax.swing.JFrame {
         });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 180, -1));
 
-        jButton6.setBackground(new java.awt.Color(0, 0, 255));
+        jButton6.setBackground(new java.awt.Color(0, 0, 153));
         jButton6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(153, 255, 51));
+        jButton6.setForeground(new java.awt.Color(0, 255, 255));
         jButton6.setText("Eliminar Persona Local");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,6 +159,14 @@ public class MenuLocal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 180, -1));
+
+        jButton7.setBackground(new java.awt.Color(255, 165, 0));
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, -1));
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 300));
 
         pack();
@@ -163,17 +191,9 @@ public class MenuLocal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        PersonaDAO dao = new PersonaDAO();
-        try {
-           
-            JOptionPane.showMessageDialog(null, "Conexion Cerrada");
-            Portada por= new Portada();
-            por.setVisible(true);
-            dispose();
-        } catch (Exception e) {
-            System.out.println("Excepcion" + e);
-        }
-        
+EscogerBD esco=new  EscogerBD();
+esco.setVisible(true);
+dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -189,6 +209,19 @@ public class MenuLocal extends javax.swing.JFrame {
         local.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+                PersonaDAO dao = new PersonaDAO();
+        try {
+            dao.close();
+            JOptionPane.showMessageDialog(null, "Conexion Cerrada");
+            System.exit(0);
+        } catch (Exception e) {
+            System.out.println("Excepcion" + e);
+        }
+     
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,6 +265,7 @@ public class MenuLocal extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables

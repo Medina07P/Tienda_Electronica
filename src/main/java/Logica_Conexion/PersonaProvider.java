@@ -75,28 +75,57 @@ public class PersonaProvider {
         return lspersona;
     }
 
+//    public static boolean RetornarUid(String uid) {
+//        ArrayList<String> uids = new ArrayList<>();
+//        boolean rta = true;
+//        try {
+//            CollectionReference persona = Conexion.db.collection("Persona");
+//            ApiFuture<QuerySnapshot> querySnap = persona.get();
+//            for (DocumentSnapshot document : querySnap.get().getDocuments()) {
+//                uids.add(document.getString("uid"));
+//
+//            }
+//            for (int i = 0; i < uids.size(); i++) {
+//                if (uid.equals(uids.get(i))) {
+//                    return rta;
+//                } else {
+//                    return !rta;
+//                }
+//
+//            }
+//        } catch (Exception e) {
+//            System.out.println("Error" + e.getMessage());
+//        }
+//        return rta;
+//    }
+    
     public static boolean RetornarUid(String uid) {
+
         ArrayList<String> uids = new ArrayList<>();
         boolean rta = true;
+
         try {
             CollectionReference persona = Conexion.db.collection("Persona");
             ApiFuture<QuerySnapshot> querySnap = persona.get();
+
             for (DocumentSnapshot document : querySnap.get().getDocuments()) {
+
                 uids.add(document.getString("uid"));
 
             }
-            for (int i = 0; i < uids.size(); i++) {
-                if (uid.equals(uids.get(i))) {
-                    return rta;
-                } else {
-                    return !rta;
-                }
 
+            for (int i = 0; i < uids.size(); i++) {
+
+                if (uids.get(i).equals(uid)) {
+                    System.out.println("entra");
+                    return rta;
+                }
             }
+
         } catch (Exception e) {
-            System.out.println("Error" + e.getMessage());
+            System.out.println("Error:" + e.getMessage());
         }
-        return rta;
+        return !rta;
     }
 
     public static Persona CargarInfoPersonaCodigo(String codigo) {
