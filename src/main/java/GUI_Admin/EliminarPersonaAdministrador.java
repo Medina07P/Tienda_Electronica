@@ -52,6 +52,7 @@ public class EliminarPersonaAdministrador extends javax.swing.JFrame {
 
     public EliminarPersonaAdministrador() {
         initComponents();
+        this.setLocationRelativeTo(null);
         Path currentRelativePath = Paths.get("");
         s = currentRelativePath.toAbsolutePath().toString();
         s1 = currentRelativePath.toAbsolutePath().toString();
