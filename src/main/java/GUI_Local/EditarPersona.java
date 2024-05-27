@@ -244,6 +244,9 @@ public class EditarPersona extends javax.swing.JFrame {
             PersonaDAO dao = new PersonaDAO();
             dao.update(per);
             JOptionPane.showMessageDialog(null, "Actualizar Exitoso");
+            MenuLocal menu=new MenuLocal();
+            menu.setVisible(true);
+            dispose();
         } catch (Exception e) {
             System.out.println("Excepcion" + e);
         }
@@ -277,7 +280,11 @@ public class EditarPersona extends javax.swing.JFrame {
             if (res4 >= 1) {
                 jTextField7.setBorder(new LineBorder(Color.RED, 2));
                 JOptionPane.showMessageDialog(null, "Revise el campo Nombre Imagen");
-            } 
+            }
+            EditarPersona edit=new EditarPersona();
+            edit.setVisible(true);
+            dispose();
+            
         }  
 
     }//GEN-LAST:event_jButton2ActionPerformed

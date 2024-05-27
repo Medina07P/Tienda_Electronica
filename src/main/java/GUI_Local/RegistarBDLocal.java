@@ -4,6 +4,7 @@
  */
 package GUI_Local;
 
+import GUI_Admin.RegistrarPersonaAdministrador;
 import Logica_Conexion.Conexion;
 import Logica_Conexion.PersonaDAO;
 import Logica_Negocio.Persona;
@@ -221,6 +222,9 @@ String uid= jTextField1.getText();
         String consulta="INSERT INTO `persona`(`Uid`, `Nombre`, `Apellido`, `Direccion`, `Cedula`, `Producto`, `Nom_img`) VALUES ('"+uid+"','"+nombre+"','"+apellido+"','"+direccion+"','"+cedula+"','"+producto+"','"+nombreimg+"')";
         
           JOptionPane.showMessageDialog(null, "Registro Exitoso");
+          MenuLocal menu=new MenuLocal();
+          menu.setVisible(true);
+          dispose();
         }catch(Exception e)
         {
             System.out.println("Excepcion"+ e);
@@ -256,10 +260,11 @@ String uid= jTextField1.getText();
                 jTextField7.setBorder(new LineBorder(Color.RED, 2));
                 JOptionPane.showMessageDialog(null, "Revise el campo Nombre Imagen");
             } 
+            RegistarBDLocal regis=new RegistarBDLocal();
+            regis.setVisible(true);
+            dispose();
         }
-        MenuLocal menu = new MenuLocal();
-        menu.setVisible(true);
-        dispose();
+        
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
