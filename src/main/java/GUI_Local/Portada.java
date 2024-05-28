@@ -7,6 +7,7 @@ package GUI_Local;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import javax.imageio.ImageIO;
@@ -58,6 +59,8 @@ public class Portada extends javax.swing.JFrame {
             System.err.println(ioexception);
         }
     }
+
+
           public void establecerImagenSalir() {
 
         Image img = null;

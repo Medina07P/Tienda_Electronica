@@ -260,9 +260,6 @@ String uid= jTextField1.getText();
                 jTextField7.setBorder(new LineBorder(Color.RED, 2));
                 JOptionPane.showMessageDialog(null, "Revise el campo Nombre Imagen");
             } 
-            RegistarBDLocal regis=new RegistarBDLocal();
-            regis.setVisible(true);
-            dispose();
         }
         
         

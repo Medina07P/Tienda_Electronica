@@ -281,9 +281,6 @@ public class EditarPersona extends javax.swing.JFrame {
                 jTextField7.setBorder(new LineBorder(Color.RED, 2));
                 JOptionPane.showMessageDialog(null, "Revise el campo Nombre Imagen");
             }
-            EditarPersona edit=new EditarPersona();
-            edit.setVisible(true);
-            dispose();
             
         }  
 
